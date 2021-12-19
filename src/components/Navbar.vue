@@ -8,11 +8,12 @@
       </label>
       <div id="sidebarMenu">
         <ul class="sidebarMenuInner">
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/login">Login</router-link></li>
-          <li><router-link to="/search">Search</router-link></li>
-          <li><router-link to="/profile">Profile</router-link></li>
-          <li><router-link to="/notfound">Notfound</router-link></li>
+          <li ><router-link @click.native="close()"  to="/">Home</router-link></li>
+          <li ><router-link @click.native="close()"   to="/login">Login</router-link></li>
+          <li ><router-link @click.native="close()"  to="/search">Search</router-link></li>
+          <!-- <li><router-link to="/profile">Profile</router-link></li> -->
+          <!-- <li><router-link to="/notfound">Notfound</router-link></li> -->
+          <!-- <li @click="close()">111</li> -->
         </ul>
       </div>
 
@@ -22,6 +23,23 @@
     </div>
 </template>
 
+<script>
+export default {
+  name: 'Navbar',
+  data () {
+    return {
+      }
+    },
+  components: {
+  },
+  methods: {
+    close() {
+      document.getElementById("openSidebarMenu").checked = false
+    }
+  },
+  
+}
+</script>
 
 <style lang="scss" scoped>
   @import "src/assets/style/components/Navbar.scss";

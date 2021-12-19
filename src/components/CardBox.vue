@@ -1,11 +1,8 @@
 <template>
   <div>
-
-    <input type="search" class="search-box" :placeholder="placeholder" v-model="indexWord" @keydown.enter="searchKeyWord()"/>
-    <button @click="searchKeyWord()" >buttton</button>
-
+    <input class="search-box" :placeholder="placeholder" v-model="indexWord" @keydown.enter="searchKeyWord()"/>
     <hr>
-
+    <p id="search-info">검색을 통해 이모티콘을 찾아보세요!</p>
     <div class="search-wrap-div">
       <Card 
         v-for="(item,idx) of items" 
@@ -51,9 +48,6 @@ import Card from './Card.vue'
     },
 
     methods: {
-      check() {
-        console.log(this.items)
-      },
 
       // 특정 이모티콘정보 가져오기
       getImoticonList (pageNum) {
@@ -77,6 +71,9 @@ import Card from './Card.vue'
           return false
         } 
 
+        var info = document.getElementById("search-info")
+        info.innerHTML = "클릭시 상세정보를 확인할 수 있습니다"
+
         // 검색결과 초기화
         this.search_list = []
         this.items = []
@@ -88,13 +85,11 @@ import Card from './Card.vue'
           headers : { 'apikey': this.key } 
         })
         .then((res) => {
-          console.log(res)
           if (res.data.body.pageMap === null) {
             this.indexWord = ''
             this.placeholder = '결과가 없습니다'
             return false
           }
-          // console.log(res.data.body.pageMap.totalCount)
           this.totalNum = res.data.body.pageMap.totalCount
           this.nextNum = 0
           this.search_list.push(...res.data.body.packageList)

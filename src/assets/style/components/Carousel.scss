@@ -1,23 +1,21 @@
-
-
-#drag-container, #spin-container {
+#spin-container {
   position: relative; 
-  /* 포지션 */
   background-color: #fff;
   left: 0%;
   top: 100px;
-  /* display: -webkit-box;
-  display: -ms-flexbox; */
+  display: -webkit-box;
+  display: -ms-flexbox; 
   display: flex;
   margin: auto;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transform: rotateX(-10deg);
           transform: rotateX(-10deg);
-  /* visibility: hidden; */
+  visibility: hidden; 
+  
 }
 
-#drag-container img, #drag-container video {
+#spin-container img {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   position: absolute;
@@ -31,15 +29,16 @@
   -webkit-box-shadow: 0 0 8px #fff;
           box-shadow: 0 0 8px #fff;
   -webkit-box-reflect: below 10px linear-gradient(transparent, #0005);
+  visibility: visible
 }
 
-#drag-container img:hover, #drag-container video:hover {
+#spin-container img:hover {
   -webkit-box-shadow: 0 0 15px #fffd;
           box-shadow: 0 0 15px #fffd;
   -webkit-box-reflect: below 10px linear-gradient(transparent, #0007);
 }
 
-#drag-container p {
+#spin-container p {
   font-family: Serif;
   position: absolute;
   
@@ -50,22 +49,17 @@
   /* color: #fff; */
 }
 
-#logodesign {
-  color: #fff;
-  font-size: 10em;
-  margin-top: 1000px;
+.click-div{
+  width: fit-content;
+  margin: auto;
+  margin-top: 350px;
+}
+
+.click-div :hover{
   cursor: pointer; 
-  color:#FC466B;
- 
 }
 
-#blackbox {
-  width: 1000px;
-  height: 1000px;
-  background-color: black;
-}
 #ground {
-
   width: 900px;
   height: 900px;
   position: absolute;

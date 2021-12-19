@@ -1,5 +1,7 @@
 .search-card {
-  // border: 1px solid #d4ab67;
+  border: 1px solid #e2e8f0;
+  box-shadow: 1px 1px 1px 1px #e2e8f0;
+  border-radius: 10px;
   margin-top: 10%;
 
 }
@@ -10,13 +12,14 @@
 }
 
 .search-card-img img {
-  height: 6.5rem;
-  width: 100%;
+  height: 10rem;
+  width: 80%;
 }
 
 .search-card-p {
-  background-color: #32383B;
-  color: #F1E8DB;
+  background-color: none;
+  color: black;
+  font-weight: bolder;
   font-size: 10.5px;
   font-weight: 200;
   height: 20px;
@@ -31,16 +34,4 @@
   width: calc(100% - 3px);
   padding-left: 3px;
 }
-
-//.search-card-p p {
-//  margin: 0px;
-//  font-size: 10px;
-//  text-align: center;
-//  display: flex;
-//  align-items: center;
-//  justify-content: center;
-//  text-overflow: ellipsis;
-//  width: 100%;
-//  height: 100%;
-//}
 

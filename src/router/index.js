@@ -4,8 +4,6 @@ import Home from '../views/Home.vue'
 import Detail from '../views/Detail.vue'
 import Login from '../views/Login.vue'
 import Search from '../views/Search.vue'
-import Test from '../views/Test.vue'
-import Stipop from '../views/Stipop.vue'
 import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -15,11 +13,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/test',
-    name: 'Test',
-    component: Test
   },
   {
     path: '/detail/:imoticonId',
@@ -33,11 +26,6 @@ const routes = [
     component: Login
   },
   {
-    path: '/stipop',
-    name: 'Stipop',
-    component: Stipop
-  },
-  {
     path: '/search',
     name: 'Search',
     component: Search
@@ -47,6 +35,12 @@ const routes = [
     name: 'NotFound',
     component: NotFound
   },
+  {
+    path: '*',
+    redirect: "/notFound"
+    // 아래처럼 바로 NotFound 경로를 매칭해도 됨
+    // component: NotFound
+},
 
 ]
 

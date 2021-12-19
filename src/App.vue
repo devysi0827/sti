@@ -18,7 +18,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -27,5 +27,6 @@ export default {
 
 #padding {
   padding: 70px;
+  padding-bottom: 0px;
 }
 </style>
