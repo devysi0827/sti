@@ -44,7 +44,7 @@ import Card from './Card.vue'
         // infinite scroll
         // loading : false, //로딩 그게 돌아야한다면
         nextNum: 0,
-        items: [1,2,3,4]
+        items: []
       }
     },
 
@@ -147,6 +147,6 @@ import Card from './Card.vue'
 </script>
 
 <style lang="scss" scoped>
-  @import "src/assets/style/CardBox.scss";
+  @import "src/assets/style/Components/CardBox.scss";
 </style>
 

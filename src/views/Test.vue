@@ -1,5 +1,7 @@
 <template>
   <div class="Test">
+    <hr>
+    <hr>
     <CardBox />
   </div>
 </template>
@@ -18,5 +20,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  @import "src/assets/style/views/Test.scss";
 </style>

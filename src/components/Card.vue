@@ -19,7 +19,7 @@
 
 <script>
   export default {
-    name: 'CarD',
+    name: 'Card',
     props: ['imoticon'],
 
     data () {
@@ -52,5 +52,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "src/assets/style/Card.scss";
+  @import "src/assets/style/Components/Card.scss";
 </style>
