@@ -9,10 +9,15 @@
       <div id="sidebarMenu">
         <ul class="sidebarMenuInner">
           <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/about">Login</router-link></li>
+          <li><router-link to="/login">Login</router-link></li>
           <li><router-link to="/search">Search</router-link></li>
           <li><router-link to="/profile">Profile</router-link></li>
+          <li><router-link to="/notfound">Notfound</router-link></li>
         </ul>
+      </div>
+
+      <div class = "main-logo">
+        <router-link class="main-word"  to="/profile">stipop</router-link>
       </div>
     </div>
 </template>

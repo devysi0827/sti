@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import Search from '../views/Search.vue'
 import Test from '../views/Test.vue'
 import Stipop from '../views/Stipop.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,11 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search
+  },
+  {
+    path: '/notfound',
+    name: 'NotFound',
+    component: NotFound
   },
 
 ]

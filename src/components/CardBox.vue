@@ -1,8 +1,9 @@
 <template>
   <div>
 
-    <input type="text" class="search-box" :placeholder="placeholder" v-model="indexWord" @keydown.enter="searchKeyWord()"/>
-    <button @click="check()" >buttton</button>
+    <input type="search" class="search-box" :placeholder="placeholder" v-model="indexWord" @keydown.enter="searchKeyWord()"/>
+    <button @click="searchKeyWord()" >buttton</button>
+
     <hr>
 
     <div class="search-wrap-div">
@@ -34,12 +35,13 @@ import Card from './Card.vue'
         // api key
         key : '1b6e514bbe964219cd72702eb8079151',
         userId : '1',
+
         // index case
         indexWord: '', 
-        // totalPage: 0,
         totalNum: 0,
         nowPage: 1,
         search_list : [],
+        // totalPage: 0,
 
         // infinite scroll
         // loading : false, //로딩 그게 돌아야한다면
@@ -53,11 +55,11 @@ import Card from './Card.vue'
         console.log(this.items)
       },
 
-      // 특정 유물정보 가져오기
+      // 특정 이모티콘정보 가져오기
       getImoticonList (pageNum) {
         axios({
               method: 'get',
-              url : `https://messenger.stipop.io/v1/package?userId=${this.userId}&pageNumber=${pageNum}`, 
+              url : `https://messenger.stipop.io/v1/package?userId=${this.userId}&pageNumber=${pageNum}&searchText=${this.indexWord}`, 
               headers : { 'apikey': this.key } 
               // url : `/openapi/relic/list?serviceKey=${this.serviceKey}&name=${this.indexWord}&numOfRows=100&pageNo=${pageNum}`, 
             })
@@ -82,19 +84,19 @@ import Card from './Card.vue'
         // 응답 요청
         axios({
           method: 'get',
-          url : `https://messenger.stipop.io/v1/package?userId=${this.userId}&pageNumber=1&searchText=${this.indexWord}`, 
+          url : `https://messenger.stipop.io/v1/package?userId=${this.userId}&pageNumber=0&searchText=${this.indexWord}`, 
           headers : { 'apikey': this.key } 
         })
         .then((res) => {
-          console.log(`https://messenger.stipop.io/v1/package?userId=${this.userId}&pageNumber=1&searchText=${this.indexWord}`)
           console.log(res)
-          if (res.data.body.packageList === []) {
+          if (res.data.body.pageMap === null) {
             this.indexWord = ''
             this.placeholder = '결과가 없습니다'
             return false
           }
+          // console.log(res.data.body.pageMap.totalCount)
+          this.totalNum = res.data.body.pageMap.totalCount
           this.nextNum = 0
-          
           this.search_list.push(...res.data.body.packageList)
           this.indexWord = ''
           this.placeholder = ''
@@ -115,7 +117,6 @@ import Card from './Card.vue'
       // infinite methods
       loadMore () {
         if (this.nextNum > this.totalNum) {
-          console.log("false")
           return false
         }
         // this.loading = true;
