@@ -77,28 +77,65 @@ export default {
 
 
     function init(delayTime) {
+      console.log("init")
       for (var i = 0; i < aEle.length; i++) {
         aEle[i].style.transform = "rotateY(" + (i * (360 / aEle.length)) + "deg) translateZ(" + radius + "px)";
         aEle[i].style.transition = "transform 1s";
         aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + "s";
+        
       }
     }
 
     // // auto spin
     if (autoRotate) {
-      console.log("rotate")
-      console.log(rotateSpeed)
-      var animationName = (rotateSpeed > 0 ? 'spin' : 'spinRevert');
+      var animationName = 'spin'
       ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
-      console.log(ospin.style.animation)
     }
-    console.log(autoRotate)
   }
 }
 </script>
 
+
+<style>
+@-webkit-keyframes spin {
+  from{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  } to{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  } to{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes spinRevert {
+  from{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  } to{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes spinRevert {
+  from{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  } to{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+</style>
+
 <style lang="scss" scoped>
   @import "src/assets/style/Components/Carousel.scss";
 </style>
-
-

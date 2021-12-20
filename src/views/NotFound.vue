@@ -16,12 +16,28 @@
       </div>  
     </div>
 
+  <Modal v-if="isError" :error="error" @close="isError=false"></Modal>
+  <button @click="check()">11</button>
   </div>
 </template>
 
 <script>
+import Modal from "@/components//Modal";
 export default {
   name: 'NotFound',
+  data () {
+    return {
+      isError: false,
+    }
+  },
+  components: {
+    Modal
+  },
+  methods: {
+    check() {
+      this.isError = true
+    }
+  }
 }
 </script>
 

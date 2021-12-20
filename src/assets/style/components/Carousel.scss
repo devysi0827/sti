@@ -38,25 +38,14 @@
   -webkit-box-reflect: below 10px linear-gradient(transparent, #0007);
 }
 
-#spin-container p {
-  font-family: Serif;
-  position: absolute;
-  
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%) rotateX(90deg);
-          transform: translate(-50%,-50%) rotateX(90deg);
-  /* color: #fff; */
-}
-
 .click-div{
   width: fit-content;
   margin: auto;
   margin-top: 350px;
-}
 
-.click-div :hover{
-  cursor: pointer; 
+  :hover {
+    cursor: pointer;
+  }
 }
 
 #ground {
@@ -71,40 +60,3 @@
   visibility: visible
 }
 
-@-webkit-keyframes spin {
-  from{
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  } to{
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-}
-
-@keyframes spin {
-  from{
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  } to{
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-}
-@-webkit-keyframes spinRevert {
-  from{
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  } to{
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-}
-@keyframes spinRevert {
-  from{
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  } to{
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-}
