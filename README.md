@@ -16,6 +16,8 @@ npm run serve
 
 - 본 과제에 key는 모두 숨길예정이며, 이메일로 따로 발송할 예정입니다.
 
+- 카카오 공유하기는 http://localhost:8080 에서만 작동합니다.
+
 - 위치는 아래 세군대입니다
 
   - kakao_key: STI>public>index.html  > "input your kakao key" 
