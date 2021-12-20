@@ -30,7 +30,7 @@ import Card from './Card.vue'
         placeholder: '검색어를 입력해주세요.',
 
         // api key
-        key : '1b6e514bbe964219cd72702eb8079151',
+        key : 'input your stipop key',
         userId : '1',
 
         // index case

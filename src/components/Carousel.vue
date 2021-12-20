@@ -53,7 +53,7 @@ export default {
        axios({
               method: 'get',
               url : `https://messenger.stipop.io/v1/package?userId=1&pageNumber=0`, 
-              headers : { 'apikey': '1b6e514bbe964219cd72702eb8079151' } 
+              headers : { 'apikey': 'input your stipop key' } 
             })
             .then((res) => {
               tempArray = res.data.body.packageList
