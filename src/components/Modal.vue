@@ -13,7 +13,7 @@
 
           <div class="modal-body">
             <slot name="body">
-              {{error}}
+              {{content}}
             </slot>
           </div>
 
@@ -32,9 +32,10 @@
 </template>
 
 <script>
+
 export default {
-  name: "ErrorModal",
-  props: ['error']
+  name: "Modal",
+  props: ['content']
 }
 </script>
 

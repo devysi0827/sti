@@ -1,18 +1,27 @@
 <template>
   <div>
-    <h1 style="font:bold;">Login</h1>
+    <h1 id="login">Login</h1>
       <div class="textbox">
         <input type="text" id="username" placeholder="사용자이름" v-model="credentials.username">
       </div>
       <div class="textbox">
         <input type="password" id="password" placeholder="비밀번호" v-model="credentials.password">
       </div>
-      <button @click="login" class="btn btn-success">로그인</button>
+      <!-- <div> -->
+        <Button @click.native="login()" value="login"/>
+      <!-- </div> -->
+      <div id="kakao-login" >
+        <Button value="kakao login"/>
+      </div>
+
+     <Modal v-if="modalState" :content="content" @close="modalState=false"></Modal> 
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import Modal from "@/components//Modal.vue";
+import Button from '../components/Button.vue'
+// import axios from 'axios'
 
 export default {
   name: 'Login',
@@ -21,25 +30,32 @@ export default {
       credentials: {
         username: null,
         password: null,
-      }
+      },
+      modalState: false,
+      content: '백엔드 로그인 기능은 미구현입니다'
     }
   },
+  components: {
+   Modal,
+   Button
+  },
   methods: {
-    login: function () {
-      axios({
-        method: 'post',
-        url: 'http://127.0.0.1:8000/accounts/api-token-auth/',
-        data: this.credentials,
-      })
-        .then(res => {
-          console.log(res)
-          localStorage.setItem('jwt', res.data.token)
-          this.$emit('login')
-          this.$router.push({ name: 'Maindoor' })
-        })
-        .catch(err => {
-          console.log(err)
-        })
+    login () {
+      this.modalState = true
+      // axios({
+      //   method: 'post',
+      //   url: 'http://127.0.0.1:8000/accounts/api-token-auth/',
+      //   data: this.credentials,
+      // })
+      //   .then(res => {
+      //     console.log(res)
+      //     localStorage.setItem('jwt', res.data.token)
+      //     this.$emit('login')
+      //     this.$router.push({ name: 'Maindoor' })
+      //   })
+      //   .catch(err => {
+      //     console.log(err)
+      //   })
     },
   }
 }
@@ -77,4 +93,8 @@ html {
   -moz-appearance: none;
   appearance: none;
 }
+</style>
+
+<style lang="scss" scoped>
+  @import "@/assets/style/views/Login.scss";
 </style>

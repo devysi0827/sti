@@ -20,24 +20,30 @@
         :imoticon="item"
       />
     </div>
+    <Modal v-if="modalState" :content="content" @close="modalState=false"></Modal> 
+
   </div>
 </template>
 
 <script>
+import Modal from "@/components//Modal.vue";
 import ImoticonCard  from '@/components/ImoticonCard.vue'
 export default {
   name: 'Detail',
   data () {
     return {
         imoticons: [],
-
+        
+        //modal
+        modalState: false,
+        content: '백엔드 좋아요 기능은 미구현입니다',
         // kakao
         selectedUrl: '',
         kakaoImageUrl: '',
       }
     },
   components: {
-
+    Modal,
     ImoticonCard 
   },
   methods: {
@@ -49,6 +55,7 @@ export default {
       else {
         heart.style.color = "red"
       }
+      this.modalState = true
     },
 
     // 카카오 공유하기

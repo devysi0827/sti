@@ -12,13 +12,11 @@
           <li ><router-link @click.native="close()"   to="/login">Login</router-link></li>
           <li ><router-link @click.native="close()"  to="/search">Search</router-link></li>
           <!-- <li><router-link to="/profile">Profile</router-link></li> -->
-          <!-- <li><router-link to="/notfound">Notfound</router-link></li> -->
-          <!-- <li @click="close()">111</li> -->
         </ul>
       </div>
 
       <div class = "main-logo">
-        <router-link class="main-word"  to="/profile">stipop</router-link>
+        <router-link class="main-word"  to="/">stipop</router-link>
       </div>
     </div>
 </template>
