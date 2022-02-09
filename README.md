@@ -22,7 +22,7 @@ npm run serve
 
   - kakao_key: STI>public>index.html  > "input your kakao key" 
 
-  - stipop_key: sti>src>components>CardBox.vue > "input your stipop key"> 
+  - stipop_key: sti>src>components>CardBox.vue > "input your stipop key"
   - stipop_key: sti>src>components>carousel.vue> "input your stipop key"
 
 
